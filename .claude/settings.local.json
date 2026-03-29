@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip show:*)",
+      "Bash(pip index:*)",
+      "Bash(pip install:*)",
+      "Bash(\"C:/Program Files/Python311/python.exe\" -c:*)",
+      "Bash(\"C:/Program Files/Python311/python.exe\" -m:*)",
+      "WebSearch"
+    ]
+  }
+}

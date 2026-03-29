@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "Read(//c/Users/ericf/AppData/Roaming/Python/Python311/site-packages/**)",
+      "Read(//c/Users/ericf/.vntrader/**)",
+      "WebFetch(domain:github.com)",
+      "Bash(xargs:*)",
+      "Read(//c/Program Files/Python311/Lib/site-packages/**)",
+      "Read(//e/Projects/**)",
+      "Bash(git add vnpy/trader/constant.py)",
+      "Bash(git commit:*)",
+      "Bash(git add vnpy_ctastrategy/base.py)",
+      "Bash(git add vnpy_rqdata/rqdata_datafeed.py)",
+      "Bash(powershell -Command \"Get-Item ''C:\\\\Program Files\\\\Python311\\\\Lib\\\\site-packages\\\\vnpy_ctp\\\\api\\\\*'' | Select-Object Name, @{N=''Blocked'';E={\\($_| Get-Item -Stream ''Zone.Identifier'' -ErrorAction SilentlyContinue\\) -ne $null}}\")",
+      "Bash(powershell -Command \"Get-Item ''C:\\\\Program Files\\\\Python311\\\\Lib\\\\site-packages\\\\vnpy_ctp\\\\api\\\\vnctpmd.cp311-win_amd64.pyd'' -Stream ''Zone.Identifier'' -ErrorAction SilentlyContinue\")",
+      "Bash(powershell -Command \"Get-Content ''C:\\\\Program Files\\\\Python311\\\\Lib\\\\site-packages\\\\vnpy_ctp\\\\api\\\\vnctpmd.cp311-win_amd64.pyd'' -Stream ''Zone.Identifier'' 2>$null; echo ''done''\")",
+      "Bash(powershell -Command \"& {Get-Content -Path ''C:\\\\Program Files\\\\Python311\\\\Lib\\\\site-packages\\\\vnpy_ctp\\\\api\\\\vnctpmd.cp311-win_amd64.pyd'' -Stream Zone.Identifier}\")",
+      "WebFetch(domain:akshare.akfamily.xyz)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\ericf\\AppData\\Roaming\\Python\\Python311\\site-packages\\vnpy_rqdata",
+      "C:\\Program Files\\Python311\\Lib\\site-packages\\vnpy_ctabacktester\\ui",
+      "C:\\Program Files\\Python311\\Lib\\site-packages\\vnpy_ctabacktester",
+      "C:\\Program Files\\Python311\\Lib\\site-packages\\vnpy_ctastrategy",
+      "C:\\Users\\ericf\\.claude\\projects\\e--Projects-vnpy",
+      "e:\\Projects\\vnpy_ctastrategy\\vnpy_ctastrategy"
+    ]
+  }
+}

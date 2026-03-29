@@ -105,15 +105,20 @@ class AlphaDataset:
 
         args: list[tuple] = [(self.df, name, expression) for name, expression in expressions]
 
-        context: BaseContext = get_context("spawn")
+        if max_workers == 1:
+            # Run in main process to avoid spawn pickling issues (e.g. Jupyter on Windows)
+            for arg in tqdm(args, total=len(args)):
+                results.append(calculate_feature(arg))
+        else:
+            context: BaseContext = get_context("spawn")
 
-        with context.Pool(processes=max_workers) as pool:
-            # Calculate all expressions in parallel
-            it = pool.imap(calculate_feature, args)
+            with context.Pool(processes=max_workers) as pool:
+                # Calculate all expressions in parallel
+                it = pool.imap(calculate_feature, args)
 
-            # Collect results
-            for result in tqdm(it, total=len(args)):
-                results.append(result)
+                # Collect results
+                for result in tqdm(it, total=len(args)):
+                    results.append(result)
 
         self.result_df = self.df.with_columns(results)
 
